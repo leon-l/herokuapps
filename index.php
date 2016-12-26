@@ -3,21 +3,23 @@ require_once __DIR__ . "/vendor/autoload.php";
 
 $user = array(
 	'first_name' => 'Leon',
-	'last_name' => 'Lourie',
-	'tags' => array('developer','user')
+	'last_name' => 'Lourie'
 );
 
 // Connect to test database
-$db = new MongoClient("mongodb://leon:leon#@ds141358.mlab.com:41358/leondb");
+$connection = new MongoClient("mongodb://leon:leon#@ds141358.mlab.com:41358/leondb");
+$db = $connection->leondb;
 
 // Get the users collection
-$c_users = $db->users;
+$collection = $connection->leondb->users;
 
-// Insert this new document into the users collection
-$c_users->save($user);
+// Insert new document into the users collection
+$collection->save($user);
+//$collection->insert($user);
+
 
 // Find a user
-$user = array(
+/*$user = array(
 	'first_name' => 'Leon',
 	'last_name' => 'Lourie'
 );
@@ -27,5 +29,5 @@ $key = "first_name";
 echo "User found: " . $user[$key];
 
 // Drop collection
-$c_users->drop();
+$c_users->drop();*/
 ?>
