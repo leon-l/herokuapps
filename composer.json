@@ -1,5 +1,6 @@
 {
 	"require": {
-		"ext-mongo": "*"
+		"ext-mongo": "*",
+		"ext-mongodb": "^1.1.0"
 	}
 }
