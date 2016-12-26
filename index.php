@@ -1,20 +1,12 @@
 <?php
-require_once __DIR__ . "/vendor/autoload.php";
-
 $user = array(
 	'first_name' => 'Leon',
 	'last_name' => 'Lourie',
 	'tags' => array('developer','user')
 );
 
-// Configuration
-$dbhost = 'leon-del-mar:Lemon90#@ds141358.mlab.com:41358';
-$dbname = 'leondb';
-
 // Connect to test database
-//mongodb://leon-del-mar:Lemon90#@ds141358.mlab.com:41358/leondb
-$m = new Mongo("mongodb://$dbhost");
-$db = $m->$dbname;
+$db = new Mongo("mongodb://leon-del-mar:Lemon90#@ds141358.mlab.com:41358/leondb");
 
 // Get the users collection
 $c_users = $db->users;
