@@ -8,7 +8,7 @@ $user = array(
 );
 
 // Connect to test database
-$db = new Mongo("mongodb://leon-del-mar:Lemon90#@ds141358.mlab.com:41358/leondb");
+$db = new MongoClient("mongodb://leon-del-mar:Lemon90#@ds141358.mlab.com:41358/leondb");
 
 // Get the users collection
 $c_users = $db->users;
